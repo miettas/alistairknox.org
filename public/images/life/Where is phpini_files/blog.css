@@ -1,0 +1,542 @@
+.logo img {
+	height: 39px;
+}
+.logo {
+	position: absolute;
+	top: 15px;
+	left: 85px;
+	z-index: 1000;
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+ul.blogMenu li .adsbygoogle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99999;
+}
+ul.blogMenu {
+  padding: 0;
+  list-style: none;
+}
+ul.blogMenu li {
+  font-family: 'Open Sans', sans-serif;
+  
+  line-height: 1.3;
+  color: #666666;
+  margin-bottom: 10px;
+  /* height: 120px; */
+  /* background: #eeeeee; */
+  padding: 20px 20px 20px 20px;
+  margin-right: 0px;
+  font-size: 18px;
+ 
+}
+ul.blogMenu li:hover {
+  background-color: rgba(50, 50, 50, .10);
+  border-radius: 10px;
+}
+
+.section-heading h1.title {
+  text-transform: none;
+}
+
+.article {
+  margin-top: 20px;
+}
+#article .section-heading {
+  padding-bottom: 40px;
+}
+.article a { font-weight: bold; }
+a { color: #509FE8; }
+
+h2, h3, h4, h5 {
+	text-transform: none;
+}
+.title {
+	text-transform: uppercase;
+}
+/* Menu */ 
+
+header.navbar .navbar-brand {
+	padding-left: 85px;
+}
+
+.menu-trigger {
+	position: fixed;
+	top: 15px;
+	left: 15px;
+	width: 50px;
+	height: 50px;
+	z-index: 9999;
+	border-radius: 5px;
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+ 	transition: all 300ms;
+
+}
+
+nav#slide-menu {
+	position: fixed;
+	top: 0;
+	left: -384px;
+	bottom: 0;
+	display: block;
+	float: left;
+	width: 100%;
+	max-width: 384px;
+	height: 100%;
+	background: #fff;
+	overflow: auto;
+	z-index:999	;
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+	transition: all 300ms;
+}
+nav#slide-menu ul {
+	display: block;
+	margin: 70px 15px 15px 15px;
+	padding: 0;
+	list-style: none;
+	opacity: 0.5;
+
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+	transition: all 300ms;
+}
+nav#slide-menu ul li {
+	color: #509FE8;
+	padding: 6px 0;
+	cursor: pointer;
+	line-height: 1.3;
+}
+nav#slide-menu ul li a {
+	color: #509FE8;
+}
+
+nav#slide-menu ul li:hover,
+nav#slide-menu ul li a:hover { 
+	color: #407cd6; 
+}
+	
+
+nav#slide-menu ul li:before {
+	font-family: "ico";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	color: #59e9df;
+	margin-right: 12px;
+	text-align: center;
+	font-variant: normal;
+	font-size: 0.75em;
+	text-transform: none;
+	line-height: 1em;
+}
+
+nav#slide-menu ul li.sep { 
+	margin-top: 7px; 
+	padding-top: 14px; 
+	border-top: 1px solid lighten(#556270, 10%); 
+}
+
+nav#slide-menu ul li.timeline:before { content: '\e805'; }
+nav#slide-menu ul li.events:before { content: '\e802'; }
+nav#slide-menu ul li.calendar:before { content: '\e800'; }
+nav#slide-menu ul li.settings:before { content: '\e803'; }
+nav#slide-menu ul li.logout:before { content: '\e804'; }
+
+
+body.menu-active nav#slide-menu { left: 0px; }
+body.menu-active nav#slide-menu ul { left: 0px; opacity: 1; }
+
+body.menu-active {
+	padding-left: 444px;
+}
+
+/* SVG styling */
+.tree #chart svg {
+  width: 100%;
+  height: 600px;
+  font-family: helvetica, sans-serif;
+  overflow: visible !important;
+}
+
+.tree path, .tree line {
+  stroke: #777;
+}
+
+.d3-dashboard { width: 100%; }
+.d3-dashboard path {  stroke: #fff; }
+.d3-dashboard path:hover {  opacity:0.9; }
+.d3-dashboard rect:hover {  fill:#A4CDFF; }
+.d3-dashboard .axis {  font: 10px sans-serif; }
+.d3-dashboard .legend tr{    border-bottom:1px solid grey; }
+.d3-dashboard .legend tr:first-child{    border-top:1px solid grey; }
+
+.d3-dashboard .axis path,
+.d3-dashboard .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.d3-dashboard .x.axis path {  display: none; }
+.d3-dashboard .legend{
+    margin-bottom:76px;
+    display:inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+.d3-dashboard .legend td{
+    padding:4px 5px;
+    vertical-align:bottom;
+}
+.d3-dashboard .legendFreq, .d3-dashboard .legendPerc{
+    align:right;
+    width:50px;
+}
+
+
+/* =============================================================================
+   CMN MENU TOGGLE SWITCHES
+============================================================================= */
+/**
+ * Toggle Switch Globals
+ *
+ * All switches should take on the class `cmn-toggle-switch` as well as their
+ * variant that will give them unique properties. This class is an overview
+ * class that acts as a reset for all versions of the icon.
+ */
+.cmn-toggle-switch {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 54px;
+  height: 48px;
+  font-size: 0;
+  text-indent: -9999px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+          transition: background 0.3s;
+  border-radius: 5px;
+}
+
+.cmn-toggle-switch:focus {
+  outline: none;
+}
+
+.cmn-toggle-switch span {
+  display: block;
+  position: absolute;
+  top: 23px;
+  left: 9px;
+  right: 9px;
+  height: 4px;
+  background: white;
+}
+
+.cmn-toggle-switch span::before,
+.cmn-toggle-switch span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  content: "";
+}
+
+.cmn-toggle-switch span::before {
+  top: -13px;
+}
+
+.cmn-toggle-switch span::after {
+  bottom: -13px;
+}
+
+/**
+ * Style 1
+ *
+ * Rotating hamburger icon (rot), that simply rotates 90 degrees when activated.
+ * Nothing too fancy, simple transition.
+ */
+.cmn-toggle-switch__rot {
+  background-color: #28aadc;
+}
+
+.cmn-toggle-switch__rot span {
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+}
+
+/* active state, i.e. menu open */
+.cmn-toggle-switch__rot.active {
+  background-color: #166888;
+}
+
+.cmn-toggle-switch__rot.active span {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+/**
+ * Style 2
+ * 
+ * Hamburger to "x" (htx). Takes on a hamburger shape, bars slide
+ * down to center and transform into an "x".
+ */
+.cmn-toggle-switch__htx {
+  background-color: #ff3264;
+}
+
+.cmn-toggle-switch__htx span {
+  -webkit-transition: background 0s 0.3s;
+          transition: background 0s 0.3s;
+}
+
+.cmn-toggle-switch__htx span::before,
+.cmn-toggle-switch__htx span::after {
+  -webkit-transition-duration: 0.3s, 0.3s;
+          transition-duration: 0.3s, 0.3s;
+  -webkit-transition-delay: 0.3s, 0s;
+          transition-delay: 0.3s, 0s;
+}
+
+.cmn-toggle-switch__htx span::before {
+  -webkit-transition-property: top, -webkit-transform;
+          transition-property: top, transform;
+}
+
+.cmn-toggle-switch__htx span::after {
+  -webkit-transition-property: bottom, -webkit-transform;
+          transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+.cmn-toggle-switch__htx.active {
+  background-color: #cb0032;
+}
+
+.cmn-toggle-switch__htx.active span {
+  background: none;
+}
+
+.cmn-toggle-switch__htx.active span::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.cmn-toggle-switch__htx.active span::after {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.cmn-toggle-switch__htx.active span::before,
+.cmn-toggle-switch__htx.active span::after {
+  -webkit-transition-delay: 0s, 0.3s;
+          transition-delay: 0s, 0.3s;
+}
+
+/**
+ * Style 3
+ *
+ * Hamburger to left-arrow (htla). Hamburger menu transforms to a left-pointing
+ * arrow. Usually indicates an off canvas menu sliding in from left that
+ * will be close on re-click of the icon.
+ */
+.cmn-toggle-switch__htla {
+  background-color: #509FE8;
+}
+
+.cmn-toggle-switch__htla span {
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+}
+
+.cmn-toggle-switch__htla span::before {
+  -webkit-transform-origin: top right;
+      -ms-transform-origin: top right;
+          transform-origin: top right;
+  -webkit-transition: -webkit-transform 0.3s, width 0.3s, top 0.3s;
+          transition: transform 0.3s, width 0.3s, top 0.3s;
+}
+
+.cmn-toggle-switch__htla span::after {
+  -webkit-transform-origin: bottom right;
+      -ms-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.3s, width 0.3s, bottom 0.3s;
+          transition: transform 0.3s, width 0.3s, bottom 0.3s;
+}
+
+/* active state, i.e. menu open */
+.cmn-toggle-switch__htla.active {
+  background-color: #509FE8;
+}
+
+.cmn-toggle-switch__htla.active span {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.cmn-toggle-switch__htla.active span::before,
+.cmn-toggle-switch__htla.active span::after {
+  width: 50%;
+}
+
+.cmn-toggle-switch__htla.active span::before {
+  top: 0;
+  -webkit-transform: translateX(20px) translateY(2px) rotate(45deg);
+      -ms-transform: translateX(20px) translateY(2px) rotate(45deg);
+          transform: translateX(20px) translateY(2px) rotate(45deg);
+}
+
+.cmn-toggle-switch__htla.active span::after {
+  bottom: 0;
+  -webkit-transform: translateX(20px) translateY(-2px) rotate(-45deg);
+      -ms-transform: translateX(20px) translateY(-2px) rotate(-45deg);
+          transform: translateX(20px) translateY(-2px) rotate(-45deg);
+}
+
+/**
+ * Style 4
+ *
+ * Hamburger to right-arrow (htra). Hamburger menu transforms to a
+ * right-pointing arrow. Usually indicates an off canvas menu sliding in from 
+ * right that will be close on re-click of the icon.
+ */
+.cmn-toggle-switch__htra {
+  background-color: #ff9650;
+}
+
+.cmn-toggle-switch__htra span {
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+}
+
+.cmn-toggle-switch__htra span::before {
+  -webkit-transform-origin: top left;
+      -ms-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transition: -webkit-transform 0.3s, width 0.3s, top 0.3s;
+          transition: transform 0.3s, width 0.3s, top 0.3s;
+}
+
+.cmn-toggle-switch__htra span::after {
+  -webkit-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transition: -webkit-transform 0.3s, width 0.3s, bottom 0.3s;
+          transition: transform 0.3s, width 0.3s, bottom 0.3s;
+}
+
+/* active state, i.e. menu open */
+.cmn-toggle-switch__htra.active {
+  background-color: #e95d00;
+}
+
+.cmn-toggle-switch__htra.active span {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.cmn-toggle-switch__htra.active span::before,
+.cmn-toggle-switch__htra.active span::after {
+  width: 50%;
+}
+
+.cmn-toggle-switch__htra.active span::before {
+  top: 0;
+  -webkit-transform: translateX(-6px) translateY(3px) rotate(-45deg);
+      -ms-transform: translateX(-6px) translateY(3px) rotate(-45deg);
+          transform: translateX(-6px) translateY(3px) rotate(-45deg);
+}
+
+.cmn-toggle-switch__htra.active span::after {
+  bottom: 0;
+  -webkit-transform: translateX(-6px) translateY(-3px) rotate(45deg);
+      -ms-transform: translateX(-6px) translateY(-3px) rotate(45deg);
+          transform: translateX(-6px) translateY(-3px) rotate(45deg);
+}
+
+
+#frameSpacing input {
+  margin-bottom: 15px;
+  font-size: 1.25em;
+  padding: .25em;
+}
+
+#frameSpacing label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+#frameSpacing #layout {
+  width: 100%;
+  height: 200px;
+  background: #ccc;
+  position: relative;
+  margin: 10px 0;
+}
+
+#frameSpacing .frame {
+  position: absolute;
+  bottom: 60px;
+  width: 10%;
+  height: 60px;
+  background: #fefefe;
+  text-align: center;
+  line-height: 60px;
+}
+
+.ratio {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 80%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    margin-bottom: 5px;
+}
+.fade-line {
+  position: relative;
+  height: 3.6em; /* exactly three lines */
+}
+.fade-line:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1.2em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+}
+
+.article img.pull-right {
+    transition: .2s ease;
+}
+.article img.pull-right:hover {
+    width: 100%;
+}

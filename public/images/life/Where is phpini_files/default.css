@@ -1,0 +1,20 @@
+a,
+.color-primary,
+#timeline #dates a:hover { color: #509FE8; 
+	
+}
+.btn-primary,
+.btn-default:hover,
+.modal-profile .details .position,
+header.navbar .navbar-toggle .icon-bar,
+#toggle-navbar,
+.service .service-title .title,
+.service .btn:hover,
+.pricing-table .pricing-title,
+.progress-bar,
+.progress:hover .progress-bar,
+#portfolio-filter li.active,
+#portfolio-list li .header { background: #509FE8; }
+
+#portfolio-list li:hover .more:hover:before { color: #509FE8; border-color: #509FE8; }
+.arrow-down { border-top-color: #509FE8; }
