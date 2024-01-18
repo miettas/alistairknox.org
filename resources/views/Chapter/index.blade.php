@@ -34,7 +34,7 @@
 			@foreach ($chapter as $chap)
 
 				<p>		
-					<strong><a href="{!! url('chapters', [$chap->chapid]) !!}">{!!  $chap->chapname !!}</a></strong><br /> 
+					<strong><a href="chapters/{{$chap->chapid}}">{!!  $chap->chapname !!}</a></strong><br /> 
 					{!! $info  = abbreviate($chap->chapinfo,$chap->chapid,'chapters',240) !!}
 				</p><br />
 			

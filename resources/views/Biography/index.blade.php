@@ -27,7 +27,7 @@
 		@foreach ($biography as $bio)
 
 		<p class="pl-6">
-			<h5><a href="{{ url('biographies', [$bio->bioid]) }}">{{  $bio->bioname }}</a></h5> 		</p>
+			<h5><a href="biographies/{{$bio->bioid}}">{{  $bio->bioname }}</a></h5> 		</p>
 
 		@endforeach
 

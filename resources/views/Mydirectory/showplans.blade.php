@@ -17,7 +17,7 @@
 
 	<x-slot:main>	
 
-		<br />			
+		<br />
 		{!! $plan->plinfo !!}
 		<br /><br /><br />
 

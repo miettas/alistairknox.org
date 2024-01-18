@@ -18,10 +18,11 @@
     
 </head>
 <body class="">
+
     <div class="text-gray-900 antialiased">
-    <div class="w-screen">
-        <div class="container mx-auto">@include('includes.navigation')</div>
-    </div>
+        <div class="w-screen">
+            <div class="container mx-auto">@include('includes.navigation')</div>
+        </div>
 
         <div class="grid grid-cols-1 mx-12 ">    
 
@@ -31,29 +32,30 @@
                 <slot name="header">
                     {{ $header}}
                 </slot>
-            <div>
+            </div>
+            <br />
 
             <!-- new row main-------------->
-<br />
+           
             <div>
                 <slot name="main">
                     {{ $main }}
-                </slot>          
+                </slot>
             </div>
-
+            
             <!-- new row footer-------------->
 
             <div >
-            <slot name="footer">
-                <div class="text-sm font-bold">
-                    &copy;Mietta's 2023
-                </div>
-                {{ $footer }}    
-            </slot>
+                <slot name="footer">
+                    <div class="text-sm font-bold">
+                        &copy;Mietta's 2023
+                    </div>
+                    {{ $footer }}
+                </slot>
             </div>
-
         </div>
     </div>
+
 </body>
 
 </html>

@@ -27,14 +27,14 @@
 	<x-slot:main>
 
 		@foreach($buildings as $build) 
-			
-			<div class="flex flex-col  sm:flex-row sm:pl-6 align-top  align-text-top">
+
+		<div class="flex flex-col  sm:flex-row sm:pl-6 align-top  align-text-top">
 
 			<div class="order-2">
 				<!-- building -->
 				
 				<strong>
-					<a class="max-w-[620px]" href="{!! url('buildings', [$build->buildid]) !!}">{{ $build->buildname }}</a>
+					<a class="max-w-[620px]" href="buildings/{{$build->buildid}}">{{ $build->buildname }}</a>
 				</strong>
 				Client: {{ $build->client }},
 				@if($build->address)
@@ -49,7 +49,7 @@
 					@if(isset($build->akimage))
 						@foreach($build->akimage as $img)
 							@if($loop->first)
-								<a href="{{ url('buildings', [$build->buildid]) }}"><img  src="{{$img->imgpath}}/{{$img->imgname}}.{{$img->imgextension}}" alt="{{$img->alt }}" width="100%" /></a>
+								<a href="buildings/{{$build->buildid}}"><img  src="{{$img->imgpath}}/{{$img->imgname}}.{{$img->imgextension}}" alt="{{$img->alt }}" width="100%" /></a>
 								<br /><br />
 							@endif
 						@endforeach

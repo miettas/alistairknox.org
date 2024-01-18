@@ -4,7 +4,7 @@
 
 	<x-slot:header>
 
-		<span class="visible sm:invisible"]>@include('includes.searches', ['tble' => 'SearchBooks'])</span>
+		<span class="visible sm:invisible"]>@include('includes.searches', ['tble' => 'SearchChapters'])</span>
 
 		@if( isset($noresult))
 			<h1>{{ $noresult }}</h1>
@@ -32,14 +32,14 @@
 
 					<!-- image -->
 					<div class="shrink-0 pr-4 -mb-8 sm:pt-2">
-					<a href="{{ url('books', [$bk->bkid]) }}">	
+					<a href="books/{{$bk->bkid}}">	
 						<img  src="{{$bk->thumb}}" alt="{{$bk->bkname}}" style=" width: 150px; height: 120px; object-fit: contain; object-position: left top;	" />				
 					</a>	<br />
 					</div>
 
 					<!-- book info -->
 					<div  class="basis-4/5 max-w-[560px]" >
-						<h4><a  href="{{ url('books', [$bk->bkid]) }}">{!!  $bk->bkname !!}</a></h4>	
+						<h4><a  href="books/{{$bk->bkid}}">{!!  $bk->bkname !!}</a></h4>	
 					<!--author-->
 						@if(strlen($bk->author))	
 							Author: {!! $bk->author  !!}<br />
@@ -48,7 +48,7 @@
 						<p  class="text-justify hyphens-auto"> 
 							@if(isset($bk->chapter))
 								@foreach($bk->chapter as $chap)
-									<span class="text-sm"><a href="{{url('Chapters/show', [$chap->chapid])}}">{!! $chap->chapname !!}</a>, </span>	
+									<span class="text-sm"><a href="chapters/{{$chap->chapid}}">{!! $chap->chapname !!}</a>, </span>	
 								@endforeach
 							@endif		
 						</p>
@@ -63,7 +63,7 @@
 
 	 <x-slot:search>
 
-		<span class="invisible sm:visible"]>@include('includes.searches', ['tble' => 'SearchBooks'])</span>
+		<span class="invisible sm:visible"]>@include('includes.searches', ['tble' => 'SearchChapters'])</span>
 
 	</x-slot:search>
 

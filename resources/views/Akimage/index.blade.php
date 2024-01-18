@@ -37,7 +37,7 @@
 							
 							<!-- image -->	
 							<div class="pr-4 sm:pb-4">
-								<a href="{{ url('akimages', [$img->imgid]) }}">
+								<a href="akimages/{{$img->imgid}}">
 									<picture>
 										<source srcset='{{ $small }}' media='(min-width: 150px)'> <img src='{{ $thumb }}' alt="{!! $img->alt !!}" width="{{ $width }}" />
 									</picture>
@@ -47,7 +47,7 @@
 							<!-- book info -->
 							<div  class="" >
 							<p>
-								<a href="{{ url('akimages', [$img->imgid]) }}"><strong>{!! $img->building->buildname !!}</strong>, Client: {!! $img->building->client !!}, {{ $img->alt }}</a>
+								<a href="akimages/{{$img->imgid}}"><strong>{!! $img->building->buildname !!}</strong>, Client: {!! $img->building->client !!}, {{ $img->alt }}</a>
 							</p><br /><br />
 							</div></div>
 					

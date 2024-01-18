@@ -21,7 +21,7 @@ class Building extends Model
 
     protected $primaryKey = 'buildid';
 
-    protected $fillable = ['buildname', 'builddescription', 'date_built', 'project_pjid','address_adrid','client', 'buildnote', 'buildimage', 'buildplan', 'jobnumber', 'numdrawings', 'otherprofessional', 'drawingdescription', 'drawinglocation', 'keywords', 'year_built', 'manuscriptlocation', 'manuscriptinfo', 'manuscriptcomment', 'drawinglocation2', 'buildplan2'];
+    protected $fillable = ['buildname', 'builddescription', 'date_built', 'project_pjid','address_adrid','client', 'buildnote', 'buildimage', 'buildplan', 'jobnumber', 'numdrawings', 'otherprofessional', 'drawingdescription', 'drawinglocation', 'keywords', 'year_built', 'manuscriptlocation', 'manuscriptinfo', 'manuscriptcomment', 'drawinglocation2', 'buildplan2', 'bldsuite', 'bldstnmbr', 'bldlot_number', 'bldstreet', 'bldsuburb', 'bldstate', 'bldpostcode'];
 
     
     public function address(): HasOne
@@ -50,6 +50,13 @@ class Building extends Model
             'keywords' => $this->keywords,
             'manuscriptinfo' => $this->manuscriptinfo,
             'manuscriptcomment' => $this->manuscriptcomment,
+            'bldsuite' => $this->bldsuite,
+            'bldstnmbr' => $this->bldstnmbr,
+            'bldlot_number' => $this->bldlot_number,
+            'bldstreet' => $this->bldstreet,
+            'bldsuburb' => $this->bldsuburb,
+            'bldstate' => $this->bldstate,
+            'bldpostcode' => $this->bldpostcode,
         ];
     }
 

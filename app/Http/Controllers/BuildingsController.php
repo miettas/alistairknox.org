@@ -8,7 +8,7 @@ use App\Models\Building;
 use App\Models\Akimage;
 
 class BuildingsController extends Controller
-{
+{ 
      /**
      * Display a listing of the resource.
      *

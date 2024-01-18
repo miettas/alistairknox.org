@@ -11,7 +11,6 @@
 		@endif
 	
 	</x-slot:header>
-	
 
 	<x-slot:main>
 
@@ -34,14 +33,8 @@
 
 	</x-slot:main>
 
-	<x-slot:search>
-
-		<span class="invisible sm:visible"]>@include('includes.searches', ['tble' => 'SearchPlans])</span>
-
-	</x-slot:search>
-
 	<x-slot:footer>
 		
 	</x-slot:footer>
 
-</x-guest-layout>
+</x-singlecol-layout>

@@ -32,7 +32,7 @@
 
 					<p>
 						{{ $bld->year_built }} <a href="{{ route('plans.show', [$pl->plid]) }}">{{ $bld->client }} &nbsp; &nbsp;{{  $pl->plname }}</a>
-					</p>	
+					</p>
 					
 				@endforeach
 			@endif

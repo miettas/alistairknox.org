@@ -27,7 +27,7 @@
 		@foreach ($mydirectory as $dir)
 
 		<p class="pl-6">
-			<h5><a href="{{ url('mydirectories', [$dir->dirid]) }}">{{  $dir->dirname }}</a></h5> 		</p>
+			<h5><a href="mydirectories/{{$dir->dirid}}">{{  $dir->dirname }}</a></h5> 		</p>
 
 		@endforeach
 

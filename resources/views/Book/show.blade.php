@@ -2,7 +2,7 @@
 
 	<x-slot:header> 
 
-		<span class="visible sm:invisible"]>@include('includes.searches', ['tble' => 'SearchBooks'])</span>
+		<span class="visible sm:invisible"]>@include('includes.searches', ['tble' => 'SearchChapters'])</span>
 
 		@if(empty($book))
 			<h1>No images match your query. Try again . . .<br /></h1>
@@ -78,7 +78,7 @@
 
 	<x-slot:search>
 
-		<span class="invisible sm:visible"]>@include('includes.searches', ['tble' => 'SearchBooks'])</span>
+		<span class="invisible sm:visible"]>@include('includes.searches', ['tble' => 'SearchChapters'])</span>
 
 	</x-slot:search>
 
