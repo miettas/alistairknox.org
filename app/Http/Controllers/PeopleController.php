@@ -89,7 +89,8 @@ class PeopleController extends Controller
      */
     public function destroy($pp)
     {
-        //
+        Person::destroy($pp);
+        return redirect('People')->with('flash_message', 'Person deleted!');
     }
 
     public function findname($pp)

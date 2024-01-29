@@ -94,7 +94,8 @@ class BooksController extends Controller
      */
     public function destroy($bk)
     {
-        //
+        Book::destroy($bk);
+        return redirect('books')->with('flash_message', 'Book deleted!');
     }
 
     public function menu($menu)

@@ -20,7 +20,7 @@
 					<p class="mb-3"><a class="font-normal text-sm" 
 						href="{{url('people', [$ppl->ppid])}}">{{$ppl->ppfirst_name}} {{$ppl->ppname}}</a></p>
 				@elseif(isset($ppl->ppname))
-				<p class="mb-3"><a class="font-normal text-sm" href="{{url('People', [$ppl->ppid])}}">{{$ppl->ppname}}</a></p>
+				<p class="mb-3"><a class="font-normal text-sm" href="people/{$ppl->ppid}">{{$ppl->ppname}}</a></p>
 				@endif
 			
 			@endforeach
@@ -43,7 +43,7 @@
 
 		
 
-			@if (Auth::check())<br /><a href='{{ url("person/$person->ppid/edit") }}'>( Edit )</a> @endif
+			@if (Auth::check())<br /><a href="{{ url('people/edit', [$person->plid]) }}">( Edit )</a> @endif
 		</div>
 
 	</x-slot:main>

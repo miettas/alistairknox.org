@@ -4,8 +4,8 @@
 	
 	<x-slot:header>
 
-	<h1 class="pl-6">Edit: {!! $mydirectory->dirname !!}</h1>
-	<br />
+		<h1>New Knox</h1>
+
 	</x-slot:header>
 
 
@@ -20,13 +20,15 @@
 
 	<x-slot:main>
 
-	{{ html()->modelForm($mydirectory, 'PUT')->route('mydirectories.update', $mydirectory->dirid)->open() }}
+	{{ html()->form('POST')->route('asknoxes.store')->open() }}
+				
+		@include ('Asknox._form')
 
-		@include ('Biography._form', ['SubmitButtonText' => 'Update Directory'])
+	{{ html()->form()->close() }}	
 
-	{{ html()->closeModelForm() }}	
-
+	
 	</x-slot:main>
+
 
 <!--footer------------------->
 

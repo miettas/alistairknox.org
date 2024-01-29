@@ -99,6 +99,7 @@ class AddressesController extends Controller
      */
     public function destroy($id)
     {
-        //
-    } //
+        Address::destroy($id);
+        return redirect('addresses')->with('flash_message', 'Address deleted!');
+    } 
 }

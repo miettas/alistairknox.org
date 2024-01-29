@@ -4,10 +4,10 @@
 
 	<x-slot:header>
 
-	<span class="float-right mt-2"]>@include('includes.searches', ['tble' => 'SearchImages'])</span>
-	<h2><a href="/akimages">Images</a></h2>
-	<h3> <a href="/akimages">Browse</a></h3>
-	<br />			
+	<span class="float-right mt-2"]>@include('includes.searches', ['tble' => 'SearchBuildings'])</span>
+	<h2><a href="{{route('buildings.index')}}">Buildings</a></h2>
+	<h3> <a href="{{route('buildings.index')}}">Browse</a></h3>
+	<br />
 		
 	</x-slot:header>
 

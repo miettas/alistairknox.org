@@ -99,7 +99,8 @@ class ChaptersController extends Controller
      */
     public function destroy($chap)
     {
-        //
+        Chapter::destroy($chap);
+        return redirect('chapters')->with('flash_message', 'Chapter deleted!');
     }
 
      public function diy(){

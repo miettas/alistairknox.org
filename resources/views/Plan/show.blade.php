@@ -28,7 +28,7 @@
 	
 		<span style="text-align:center">@include('/includes.next_prev.plan')</span>
 
-		@if (Auth::check())<br /><a href='{{ url("plan/$plan->plid/edit") }}'>( Edit )</a> @endif
+		@if (Auth::check())<br /><a href="{{ url('plan/edit', [$plan->plid]) }}">( Edit )</a> @endif
 
 
 	</x-slot:main>

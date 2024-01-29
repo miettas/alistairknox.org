@@ -34,7 +34,7 @@
 				<!-- building -->
 				
 				<strong>
-					<a class="max-w-[620px]" href="buildings/{{$build->buildid}}">{{ $build->buildname }}</a>
+					<a class="max-w-[620px]" href="{{route('buildings.show', [$build->buildid])}}">{{ $build->buildname }}</a>
 				</strong>
 				Client: {{ $build->client }},
 				@if($build->address)
@@ -49,7 +49,7 @@
 					@if(isset($build->akimage))
 						@foreach($build->akimage as $img)
 							@if($loop->first)
-								<a href="buildings/{{$build->buildid}}"><img  src="{{$img->imgpath}}/{{$img->imgname}}.{{$img->imgextension}}" alt="{{$img->alt }}" width="100%" /></a>
+								<a href="{{route('buildings.show', [$build->buildid])}}"><img  src="{{$img->imgpath}}/{{$img->imgname}}.{{$img->imgextension}}" alt="{{$img->alt }}" width="100%" /></a>
 								<br /><br />
 							@endif
 						@endforeach

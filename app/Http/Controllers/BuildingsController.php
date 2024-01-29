@@ -8,7 +8,8 @@ use App\Models\Building;
 use App\Models\Akimage;
 
 class BuildingsController extends Controller
-{ 
+{
+   
      /**
      * Display a listing of the resource.
      *
@@ -49,7 +50,7 @@ class BuildingsController extends Controller
      */
     public function show($build)
     {
-        $building = Building::find($build);
+        $building = Building::findOrFail($build);
         $img150 = Akimage::where('building_buildid', $building->buildid)->where('width', 150)->get();
                
         if(isset($building)) {
@@ -64,13 +65,12 @@ class BuildingsController extends Controller
                 return view('Building.show', compact(['building']))->with('img150', $img150)
                 ->with('prevPage',$prevPage)->with('nextPage', $nextPage)->with('builds', $builds);
             }
-
+       
         } else {
 
-                return view('Building.show', compact(['building']))
-                ->with('img150',$img150)>with('prevPage',$prevPage)->with('nextPage', $nextPage);
+            return view('Building.show', compact(['building']))
+            ->with('img150',$img150)>with('prevPage',$prevPage)->with('nextPage', $nextPage);
         }
-        
     }
 
     /**
@@ -96,7 +96,7 @@ class BuildingsController extends Controller
     {
         $building = Building::findOrFail($build);
         $building->update($request->all());
-        return redirect('buildings'); 
+        return redirect('buildings');
     }
 
     /**
@@ -107,8 +107,9 @@ class BuildingsController extends Controller
      */
     public function destroy(Building $build)
     {
-        //
-    }   
+        Building::destroy($build);
+        return redirect('buildings')->with('flash_message', 'Building deleted!');
+    }
 
     public function menu($menu)
     {
@@ -122,17 +123,32 @@ class BuildingsController extends Controller
         else
         {
             $buildings =  Building::where('keywords','like','%' . $menu . '%')
-            ->orderby("buildid",'desc')->simplePaginate(15);
+                ->orderby("buildid",'desc')->simplePaginate(15);
         }
             return view('Building.index', compact('buildings'));
     }
 
-    public function plmenu($menu)
+    public function plmenu()
     {
         list($min,$max) = explode("-", $menu);
         $buildings = Building::where('plan_plid','!=',0)
-         ->whereBetween('year_built',[$min,$max])->orderBy('year_built')->orderBy('client')->simplePaginate(15);
+            ->whereBetween('year_built',[$min,$max])->orderBy('year_built')->orderBy('client')->simplePaginate(15);
         return view('Plan.landing', compact('buildings'));
+    }
+
+    public function buildlanding()
+    {
+        $ary = [];
+        $array = Akimage::where('show',1)->get();
+        foreach($array as $a){
+            $id = $a->imgid; 
+            $ary = (array)$ary;
+            array_push($ary, $id);
+        }
+        $d = $ary[rand(0, count($ary)-1)];
+        $akimage = Akimage::findOrFail($d);
+
+        return view('Building.showbuilding', compact('akimage'));
     }
 
     // public function demolished()

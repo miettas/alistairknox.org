@@ -31,11 +31,11 @@
 
 			<!--heading----------->
 				<div class="w-[150px] shrink-0 mt-4">
-				<strong><a href="people/{{$pp->ppid}}">{{ $pp->ppfirst_name  ?? ''}} {{  $pp->ppname }}</a></strong> 
+				<strong><a href="{{url('people', [$pp->ppid])}}">{{ $pp->ppfirst_name  ?? ''}} {{  $pp->ppname }}</a></strong> 
 				
 				<!--image----------->
 				<br />
-					<a href="people/{{$pp->ppid}}">
+					<a href="{{url('people', [$pp->ppid])}}">
 					<img src="{{$pp->ppimgpath}}/{{$pp->ppimgname}}.{{$pp->ppimgext}}" alt="{{$pp->ppalt}}" width="100%" />
 					</a>
 				</div>

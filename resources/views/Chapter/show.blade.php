@@ -9,7 +9,7 @@
         @else
             <div class="">
                 <h1 class="max-w-[520px]">{{ $chapter->book->bkname }}, {{ $chapter->chapname }}</h1>
-            </div>     
+            </div>
 
     </x-slot:header>
 
@@ -34,11 +34,12 @@
             </h5>
             <div class="hyphenate max-w-[520px] text-justify">
                 <p>
-                    {!! $chapter->chapinfo ?? '' !!}	
+                    {!! $chapter->chapinfo ?? '' !!}
                 </p>
             </div> 
 
             <span class="text-center">@include('/includes/next_prev/chapter')</span>
+            @if (Auth::check())<br /><a href="{{ url('chapters/edit', [$chapters->chapid]) }}">( Edit )</a> @endif
             
         @endif
     </x-slot:main>

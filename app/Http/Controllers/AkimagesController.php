@@ -8,7 +8,9 @@ use App\Models\Building;
 
 class AkimagesController extends Controller
 {
-       /**
+     
+    
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -48,7 +50,7 @@ class AkimagesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($img)
-    {   
+    {
        
         $akimage = Akimage::with('building')->where('imgid',$img)->find($img); 
        
@@ -95,7 +97,8 @@ class AkimagesController extends Controller
      */
     public function destroy($img)
     {
-        //
+        Akimage::destroy($img);
+        return redirect('alimages')->with('flash_message', 'Image deleted!');
     }
 
     public function linkshow($img)

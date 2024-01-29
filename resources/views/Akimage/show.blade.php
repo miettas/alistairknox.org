@@ -16,7 +16,7 @@
 
 	<!-- Main Content--------------------------->
 
-	<x-slot:main>		
+	<x-slot:main>
 <p>
 	<div class=" mx-auto">
 		<picture>
@@ -43,6 +43,7 @@
 	@endif
 
 	<span style="text-align:center">@include('/includes.next_prev.akimage')</span>
+	@if (Auth::check())<br /><a href="{{ url('akimages/edit', [$akimage->imgid]) }}">( Edit )</a> @endif
 	
 	</x-slot:main>
 

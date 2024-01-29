@@ -7,7 +7,7 @@
 	@if( isset($noresult))
 			<h1>{{ $noresult }}</h1>
 	@else
-		<h2>Directories</h2>
+		<h2>Knox</h2>
 	@endif
 </div>
 	</x-slot:header>
@@ -24,10 +24,10 @@
 
 	<x-slot:main>
 
-		@foreach ($mydirectory as $dir)
+		@foreach ($asknox as $ask)
 
 		<p class="pl-6">
-			<h5><a href="mydirectories/{{$dir->dirid}}">{{  $dir->dirname }}</a></h5> 		</p>
+			<h5><a href="{{url('asknoxes', [$ask->askid])}}">{{  $ask->askname }}</a></h5> 		</p>
 
 		@endforeach
 
@@ -36,7 +36,7 @@
 
 <x-slot:search>
 
-	<span class="invisible sm:visible"]>@include('includes.searches', ['tble' => 'SearchChapters'])</span>
+	<span class="invisible sm:visible"]>@include('includes.searches', ['tble' => 'SearchAsknox'])</span>
 
 </x-slot:search>
 

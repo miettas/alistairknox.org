@@ -31,9 +31,11 @@
 		<div>
 			@if(!empty($address->building->client) || !empty($address->building->buildname))
 				@if(!empty($address->building->client))
-					<a href="{{ url('buildings', [$address->building_buildid]) }}"><strong>Client: </strong>{{ $address->building->client }}</a>
+					<a href="{{ url('buildings', [$address->building_buildid]) }}">
+						<strong>Client: </strong>{{ $address->building->client }}</a>
 				@else
-					<a href="{{ url('buildings', [$address->building_buildid]) }}"><strong>Building: </strong>{{ $address->building->buildname }}</a>
+					<a href="{{ url('buildings', [$address->building_buildid]) }}">
+						<strong>Building: </strong>{{ $address->building->buildname }}</a>
 				@endif
 			@else
 				<strong>No property linked to this address</strong>
@@ -46,7 +48,8 @@
 	
 </div>
 		<span style="text-align:center">@include('/includes.nextPrevMin',['tble'=>'addresses', 'editTable'=>$address->adrid, 'id'=>'adrid', 'text'=>'Address'])</span>
-		
+		@if (Auth::check())<br /><a href="{{ url('addresses/edit', [$address->adrid]) }}">( Edit )</a> @endif
+
 	</x-slot:main>
 
 	<!--search----------------->

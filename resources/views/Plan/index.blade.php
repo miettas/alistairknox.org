@@ -30,15 +30,15 @@
 			<div class="flex flex-col  sm:flex-row sm:pl-6 align-top  align-text-top">
 
 				<!-- image -------------->	
-				<div class="w-[150px] pr-6 shrink-0">		
-				<a href="plans/{{$pl->plid}}">{!! $pl->thumbs !!}</a>
+				<div class="w-[150px] pr-6 shrink-0">
+				<a href="{{url('plans', [$pl->plid])}}">{!! $pl->thumbs !!}</a>
 					<br />
 				</div>
 			
 				<!-- info ----->
 				<div class="max-w-[620px] grow text-justify hyphens-auto">
 				
-					<a href="plans/{{$pl->plid}}"><strong>{{ $pl->plname }}</strong></a><br />
+					<a href="{{url('plans', [$pl->plid])}}"><strong>{{ $pl->plname }}</strong></a><br />
 					
 					@if(isset($pl->building->buildname))
 						<strong>Building: </strong>{!! $pl->building->buildname !!}, 

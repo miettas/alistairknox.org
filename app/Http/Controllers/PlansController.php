@@ -18,7 +18,7 @@ class PlansController extends Controller
         $plans = Plan::with('building','address')->simplePaginate(12);
         return view('Plan.index', compact(['plans']));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -87,6 +87,22 @@ class PlansController extends Controller
      */
     public function destroy($pl)
     {
-        //
+        Plan::destroy($pl);
+        return redirect('plans')->with('flash_message', 'Plan deleted!');
+    }
+
+    public function planlanding()
+    {
+        $ary = [];
+        $array = Plan::get();
+        foreach($array as $a){
+            $id = $a->plid; 
+            $ary = (array)$ary;
+            array_push($ary, $id);
+        }
+        $d = $ary[rand(0, count($ary)-1)];
+        $plan = Plan::findOrFail($d);
+
+        return view('Plan.showplans', compact('plan'));
     }
 }

@@ -3,10 +3,10 @@
 	<div class="pl-4">
 		<p>
 			Name:<br />
-			{{ html()->text('dirname')->size('50%') }}
+			{{ html()->text('askname')->size('50%') }}
 		</p><p>
 			Header<br />
-			{{ html()->text('dirheader')->size('50%') }}
+			{{ html()->text('askheader')->size('50%') }}
 		</p><p>
 			Title Info:<br />
 			{{ html()->text('title_info')->size('50%') }}

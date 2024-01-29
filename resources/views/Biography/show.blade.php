@@ -20,7 +20,8 @@
 		</div>
 		<br />
 		
-	
+		<span style="text-align:center">@include('/includes.nextPrevMin',['tble'=>'biographies', 'editTable'=>$biography->bioid, 'id'=>'bioid', 'text'=>'Biography'])</span>
+		
 	</x-slot:main>
 
 <x-slot:search>
@@ -36,4 +37,4 @@
 	&nbsp;
 </x-slot:footer>
 
-</x-singlecol-layout>
+</x-myapp-layout>

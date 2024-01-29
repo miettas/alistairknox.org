@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Building;
 use App\Models\Akimage;
+use App\Models\Asknox;
+use App\Models\Biography;
 use App\Models\Chapter;
 use App\Models\Plan;
 use App\Models\Address;
@@ -49,7 +51,7 @@ class SearchController extends Controller
 		}
 		else{
 			return view('Building.index', ['noresult'=>'No building matches your query. Try again . . .']);	
-        }  		
+        }
 	}
 
 //ADDRESSES------------------------------------------------------------
@@ -100,7 +102,7 @@ class SearchController extends Controller
 		}
 		else{
 			return view('Akimage.index', ['noresult'=>'No image matches your query. Try again . . .']);
-		}		
+		}
 	}
 
 // PLANS------------------------------------------------------------
@@ -128,7 +130,7 @@ class SearchController extends Controller
 // CHAPTERS------------------------------------------------------------
 
 	public function searchchapters(Request $request)
-	{	
+	{
 		list($chapter,$num) = searchQuery($request,'App\Models\Chapter');
 			
 		if( $num > 1){
@@ -144,7 +146,8 @@ class SearchController extends Controller
 			list($prevPage,$nextPage) = nextChapter('App\Models\Chapter','chapid',$chapters->chapid);
         	list($prevChap,$nextChap) = nextBook('App\Models\Chapter','chapid',$chapters->chapid,'book_bkid',$chapters->book_bkid);
 
-			return view('Chapter.show', compact('chapters'))->with('prevPage', $prevPage)->with('nextPage', $nextPage)->with('nextChap', $nextChap)->with('prevChap', $prevChap)->with('chapter',$chapters)->with('chaps',$chaps);
+			return view('Chapter.show', compact('chapters'))->with('prevPage', $prevPage)->with('nextPage', $nextPage)
+				->with('nextChap', $nextChap)->with('prevChap', $prevChap)->with('chapter',$chapters)->with('chaps',$chaps);
 		}
 		else{	 
 			return view('Chapter.index', ['noresult'=>'No chapter matches your query. Try again . . .']);
@@ -164,7 +167,8 @@ class SearchController extends Controller
 			$ppid = $people[0]['ppid']; 
 			$ppl = Person::orderBy('pptype')->orderBy('ppname')->orderBy('ppfirst_name')->get();
 			list($prevPage,$nextPage) = nextChapter('App\Models\Person','ppid',$ppid);
-			return view('Person.show', compact('people'))->with('person',$people[0])->with('ppl',$ppl)->with('prevPage',$prevPage)->with('nextPage',$nextPage);
+			return view('Person.show', compact('people'))->with('person',$people[0])
+				->with('ppl',$ppl)->with('prevPage',$prevPage)->with('nextPage',$nextPage);
 		}
 		else{	
 			return view('Person.index', ['noresult'=>'No person matches your query. Try again . . .']);
@@ -172,34 +176,34 @@ class SearchController extends Controller
 	}
 
 
-// MYDIRECTORIES------------------------------------------------------------
+// ASKNOXES------------------------------------------------------------
 
-	public function searchmydirectories(Request $request)
+	public function SearchAsknox(Request $request)
 	{
-		list($mydirectories,$num) = searchQuery($request,'App\Models\Mydirectory');
+		list($asknoxes,$num) = searchQuery($request,'App\Models\Asknox');
 			
 		if( $num>1){
 			
-			return view('Mydirectory.index', compact('mydirectories'));
+			return view('Asknox.index', compact('asknoxes'));
 		}
 		elseif($num == 1){
-			$dir = $mydirectories[0]['dirid'];
-			$directory = Mydirectory::find($dir);
+			$asknoxes = $asknoxes[0]['askid'];
+			$asknox = Asknox::find($ask);
 			
-			list($prevPage,$nextPage) = nextChapter('App\Models\Mydirectory','dirid',$dir);
+			list($prevPage,$nextPage) = nextChapter('App\Models\Asknox','askid',$askid);
     		// list($prevChap,$nextChap) = nextChapter('App\Models\Directory','dirid',$dir,'building_buildid',$directory->building_buildid);
 		
-			return view('Mydirectory.show', compact('mydirectories'))->with('directory',$directory)->with('prevPage', $prevPage)->with('nextPage', $nextPage);
+			return view('Asknox.show', compact('asknoxes'))->with('asknox',$asknox)->with('prevPage', $prevPage)->with('nextPage', $nextPage);
 		}
 		else
-		{	
-			return view('Mydirectory.index', ['noresult'=>'No result for your query. Try again . . .']);
+		{
+			return view('Asknox.index', ['noresult'=>'No result for your query. Try again . . .']);
 		}
 	}
 
 	// BIOGRAPHIES------------------------------------------------------------
 
-	public function searchbiographies(Request $request)
+	public function searchBiographies(Request $request)
 	{
 		list($biographies,$num) = searchQuery($request,'App\Models\Biography');
 			
@@ -217,7 +221,7 @@ class SearchController extends Controller
 			return view('Biography.show', compact('biography'))->with('biographies',$biographies)->with('prevPage', $prevPage)->with('nextPage', $nextPage);
 		}
 		else
-		{	
+		{
 			return view('Biography.index', ['noresult'=>'No result for your query. Try again . . .']);
 		}
 	}

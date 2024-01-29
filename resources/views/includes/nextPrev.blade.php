@@ -12,5 +12,5 @@
 		<a href="{{$nextChap}}" > Next {{$textBook}} ></a></big>
 	</strong>
 
-	@if (Auth::check())<br /><a href='{!!url("$tble/$editTable/edit")!!}''>( Edit )</a>@endif
+	@if (Auth::check())<br /><a href='{!!url("$tble/$editTable/edit")!!}'>( Edit )</a>@endif
 </p>

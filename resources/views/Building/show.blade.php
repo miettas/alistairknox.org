@@ -12,7 +12,7 @@
 	
 	</x-slot:header>
 	
-	<x-slot:sidebar>	
+	<x-slot:sidebar>
 	</x-slot:sidebar>
 
 	<x-slot:main>
@@ -29,20 +29,21 @@
 				@foreach($img150 as $img)
 			
 					<div  class="-mb-4" style="max-width:175px;height:190px;display:inline-block" >
-						<a href="{!! url('akimages', [$img->imgid]) !!}"> 
+						<a href="{{ url('akimages', [$img->imgid])}}"> 
 							<img  src="{!! $img->imgpath !!}/{!! $img->imgname !!}.{!! $img->imgextension !!}" alt="{!! $img->alt !!}" 
 							 style=" width: 150px; height: 120px; object-fit: contain; object-position: left top;" /></a>
 							<span class="text-sm align-top">
 								{!! $img->caption !!}  @if(strlen($img->credit))<i>Photo: {{ $img->credit }}</i>@endif
 							</span>
 						</a>
-</div>
+					</div>
 
 				@endforeach
 
 			@endif
 		
 		<span style="text-align:center">@include('/includes.nextPrevMin',['tble'=>'Building', 'editTable'=>$building->buildid, 'id'=>'buildid', 'text'=>'Building'])</span>
+		@if (Auth::check())<br /><a href="{{ url('buildings/edit', [$building->buildid]) }}">( Edit )</a> @endif
 	
 	</x-slot:main>
 
