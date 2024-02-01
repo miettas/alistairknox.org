@@ -1,9 +1,8 @@
-<x-guest-layout>
+<x-myapp-layout>
 
 	<!--header------------------------->
 
 	<x-slot:header>
-		<span class="visible sm:invisible"]>@include('includes.searches', ['tble' => 'SearchDiys'])</span>
 
 		@if( isset($noresult))
 			<h1>{{ $noresult }}</h1>
@@ -80,11 +79,11 @@
 
 
 	<x-slot:search>
-		<span class="invisible sm:visible"]>@include('includes.searches', ['tble' => 'SearchDiys'])</span>
+		
 	</x-slot:search>
 
 
 	<x-slot:footer>
 	</x-slot:footer>
 
-</x-guest-layout>
+</x-myapp-layout>

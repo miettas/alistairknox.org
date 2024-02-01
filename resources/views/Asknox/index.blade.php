@@ -1,4 +1,5 @@
-<x-guest-layout>
+<x-myapp-layout>
+
 
 	<!--header--------------------------------->
 
@@ -47,4 +48,4 @@
 	&nbsp;
 </x-slot:footer>
 
-</x-singlecol-layout>
+</x-myapp-layout>

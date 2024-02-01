@@ -1,4 +1,4 @@
-@if(@isset($prevPge))
+
 	<br /><p >
 	<strong><big>
 			<a href="{{$prevPage}}" > < Previous {{$text}}</a>
@@ -8,4 +8,3 @@
 		
 		@if (Auth::check())<br /><a href='{!!url("$tble/$editTable/edit")!!}'>( Edit )</a>@endif
 	</p>
-@endif

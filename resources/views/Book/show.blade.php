@@ -19,7 +19,7 @@
 				<h4>Other Publications</h4><br />
 
 					@foreach($bks as $bks)
-						<p><a href="{{url('books', [$bks->bkid])">{{ $bks->bkname }}</a> </p><br />
+						<p><a href="{{ route('books.show', [$bks->bkid]) }}">{{ $bks->bkname }}</a> </p><br />
 					@endforeach
 			</div>
 		</div>
@@ -62,7 +62,7 @@
 				@endforeach
 			@else
 			@foreach($book->chapter as $chap)
-					<h5><a href="{{url('chapters', [$chap->chapid])">{!! $chap->chapname !!}</a></h5>
+					<h5><a href="{{ route('chapters,show', [$chap->chapid]) }}">{!! $chap->chapname !!}</a></h5>
 					<div class="hyphenate text-justify max-w-[560px]">
 						
 						{!! $info  = abbreviate($chap->chapinfo,$chap->chapid,'chapter',180) !!}

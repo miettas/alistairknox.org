@@ -76,7 +76,7 @@ class PlansController extends Controller
     {
         $plans = Plan::findOrFail($pl);
         $plans->update($request->all());
-        return redirect('plans'); 
+        return redirect('plans');
     }
 
     /**
@@ -91,6 +91,19 @@ class PlansController extends Controller
         return redirect('plans')->with('flash_message', 'Plan deleted!');
     }
 
+    public function plmenu($plmenu)
+    {
+        list($min,$max) = explode("-", $plmenu); 
+        $plans = [];
+        $buildings = Building::where('buildid','!=',0)->whereBetween('year_built',[$min,$max])->orderBy('year_built')->orderBy('client')->simplePaginate(15);
+        foreach($buildings as $build){
+            $plan = Plan::where('plid',$build->plan_plid);
+            array_push($plans,$buildings,$plan);
+        }
+        dd($plans);
+        return view('Plan.index', compact('buildings'))->with('plan',$plan);
+    }
+
     public function planlanding()
     {
         $ary = [];
@@ -100,7 +113,8 @@ class PlansController extends Controller
             $ary = (array)$ary;
             array_push($ary, $id);
         }
-        $d = $ary[rand(0, count($ary)-1)];
+ 
+        $d = $ary[rand(0, count($ary)-1)];   
         $plan = Plan::findOrFail($d);
 
         return view('Plan.showplans', compact('plan'));

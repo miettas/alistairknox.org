@@ -13,6 +13,9 @@
 	</x-slot:header>
 	
 	<x-slot:sidebar>
+	<h5>
+			@include('includes.menus.buildings')
+		</h4>
 	</x-slot:sidebar>
 
 	<x-slot:main>
@@ -42,8 +45,7 @@
 
 			@endif
 		
-		<span style="text-align:center">@include('/includes.nextPrevMin',['tble'=>'Building', 'editTable'=>$building->buildid, 'id'=>'buildid', 'text'=>'Building'])</span>
-		@if (Auth::check())<br /><a href="{{ url('buildings/edit', [$building->buildid]) }}">( Edit )</a> @endif
+		<span style="text-align:center">@include('/includes.nextPrevMin',['tble'=>'buildings', 'editTable'=>$building->buildid, 'id'=>'buildid', 'text'=>'Building'])</span>
 	
 	</x-slot:main>
 

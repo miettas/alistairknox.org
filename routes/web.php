@@ -31,7 +31,8 @@ Route::get('buildings/menu/{menu}', [App\Http\Controllers\BuildingsController::c
 // Route::get('buildings/plmenu/{menu}', [App\Http\Controllers\BuildingsController::class, 'plmenu'])->name('plan');
 Route::get('Chapters/diy', [App\Http\Controllers\ChaptersController::class, 'diy'])->name('diy');
 Route::get('plans/planlanding', [App\Http\Controllers\PlansController::class, 'planlanding'])->name('planlanding');
-Route::get('people/menu/{menu}', [App\Http\Controllers\PeopleController::class, 'menu'])->name('pplmenu');
+Route::get('plans/plmenu/{menu}', [App\Http\Controllers\PlansController::class, 'plmenu'])->name('plmenu');
+Route::get('people/menu/{menu}', [App\Http\Controllers\PeopleController::class, 'menu'])->name('ppmenu');
 Route::get('projects/menu/{menu}', [App\Http\Controllers\ProjectsController::class,'menu'])->name('pjmenu');
 
 Route::resources([

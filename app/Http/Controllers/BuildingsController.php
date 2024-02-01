@@ -59,17 +59,15 @@ class BuildingsController extends Controller
             }
 
             list($prevPage,$nextPage) = nextChapter('App\Models\Building','buildid',$building->buildid);
-            
+           
             if(strlen($building->client)>1){ 
                 $builds = Building::where('client', 'like', "%".$building->client."%")->get();
                 return view('Building.show', compact(['building']))->with('img150', $img150)
-                ->with('prevPage',$prevPage)->with('nextPage', $nextPage)->with('builds', $builds);
-            }
-       
-        } else {
+                    ->with('prevPage',$prevPage)->with('nextPage', $nextPage)->with('builds', $builds);
+            } else {
 
-            return view('Building.show', compact(['building']))
-            ->with('img150',$img150)>with('prevPage',$prevPage)->with('nextPage', $nextPage);
+            return view('Building.show', compact('building'))->with('img150',$img150)->with('prevPage',$prevPage)->with('nextPage', $nextPage);
+            }
         }
     }
 
@@ -128,13 +126,14 @@ class BuildingsController extends Controller
             return view('Building.index', compact('buildings'));
     }
 
-    public function plmenu()
-    {
-        list($min,$max) = explode("-", $menu);
-        $buildings = Building::where('plan_plid','!=',0)
-            ->whereBetween('year_built',[$min,$max])->orderBy('year_built')->orderBy('client')->simplePaginate(15);
-        return view('Plan.landing', compact('buildings'));
-    }
+    // public function plmenu($menu)
+    // {
+    //     list($min,$max) = explode("-", $menu);
+    //     $buildings = Building::where('plan_plid','!=',0)
+    //         ->whereBetween('year_built',[$min,$max])->orderBy('year_built')->orderBy('client')->simplePaginate(15);
+    //         dd($menu);
+    //     return view('Plan.index', compact('buildings'));
+    // }
 
     public function buildlanding()
     {

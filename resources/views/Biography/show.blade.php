@@ -19,9 +19,10 @@
 			{!! isset($biography->section_2) ? $biography->section_2." " : '' !!}
 		</div>
 		<br />
-		
-		<span style="text-align:center">@include('/includes.nextPrevMin',['tble'=>'biographies', 'editTable'=>$biography->bioid, 'id'=>'bioid', 'text'=>'Biography'])</span>
-		
+		@if($biography->bioid != 29)
+			<span class="text-center">@include('/includes.nextPrevMin',['tble'=>'biographies', 'editTable'=>$biography->bioid, 'id'=>'bioid', 'text'=>'Biography'])</span>
+		@endif
+
 	</x-slot:main>
 
 <x-slot:search>
