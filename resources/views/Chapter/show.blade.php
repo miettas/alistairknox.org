@@ -39,7 +39,7 @@
             </div> 
 
             <span class="text-center">@include('/includes/next_prev/chapter')</span>
-            @if (Auth::check())<br /><a href="{{ url('chapters/edit', [$chapters->chapid]) }}">( Edit )</a> @endif
+            @if (Auth::check())<br /><a href="{{ url('chapters/edit', [$chapter->chapid]) }}">( Edit )</a> @endif
             
         @endif
     </x-slot:main>
