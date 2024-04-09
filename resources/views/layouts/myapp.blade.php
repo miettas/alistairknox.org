@@ -13,7 +13,7 @@
     
     <!-- Scripts  -->
 
-     @vite(['resources/css/app.css', 'resources/css/knox.css','resources/js/app.js'])  
+     @vite(['resources/css/app.css', 'resources/css/knox.css','resources/js/app.js'])
 </head>
 <body class="">
    
