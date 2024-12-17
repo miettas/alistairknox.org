@@ -20,7 +20,7 @@
 <p>
 	<div class=" mx-auto">
 		<picture>
-		<source srcset='{{ $big }}' media='(min-width: 640px)' > <img src='{{ $small }}' alt="{!! $akimage->alt !!}" width="{{ $width }}" />	
+			<source srcset='{{ $big }}' media='(min-width: 640px)' > <img src='{{ $small }}' alt="{!! $akimage->alt !!}" width="{{ $width }}" />	
 		</picture> 
 	</div>
 		<span class="caption">

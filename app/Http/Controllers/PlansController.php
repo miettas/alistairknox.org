@@ -100,7 +100,7 @@ class PlansController extends Controller
             $plan = Plan::where('plid',$build->plan_plid);
             array_push($plans,$buildings,$plan);
         }
-        dd($plans);
+        
         return view('Plan.index', compact('buildings'))->with('plan',$plan);
     }
 
