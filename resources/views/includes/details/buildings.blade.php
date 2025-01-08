@@ -37,7 +37,7 @@
 @if(strlen($building->drawinglocation2)>1)
 	<strong>Drawing Location:</strong> {!!$building->drawinglocation2!!}
 	<br />
-@endif					
+@endif
 <!--manuscript info-->
 @if(strlen($building->manuscriptlocation)>1)
 	<strong>Manuscript Location:</strong> {!!$building->manuscriptlocation!!}
@@ -63,17 +63,18 @@
 	<strong>Plans:</strong> {!!$building->buildplan2!!}
 	<br />
 @endif
-<!--notes-->
-@if(strlen($building->buildnote)>1)
-	<div class="hyphenate" style="max-width:520px;text-align:justify;">
-		<strong>Notes:</strong> {!!$building->buildnote!!}
-	</div>
-	<br />
-@endif
+
 @if(strlen($building->keywords)>1)
 	<strong>Keywords:</strong> {!!$building->keywords!!}
 	<br />
 @endif
 @if(strlen($building->otherprofessional)>1)
 	<strong>Other Professional Employed:</strong> {!!$building->otherprofessional!!}
+@endif
+<!--notes-->
+@if(strlen($building->buildnote)>1)
+	<div class="hyphenate" style="max-width:520px;text-align:justify;">
+		<strong>Notes:</strong> {!!$building->buildnote!!}
+	</div>
+	<br />
 @endif

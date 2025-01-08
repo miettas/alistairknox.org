@@ -19,7 +19,7 @@
                 <h4>Chapters</h4><br />
 
                 @foreach($chaps as $chap)
-                    <p class="font-normal text-sm mb-4"><a href="{{url('chapters', [$chap->chapid])}}">{{$chap->chapname}}</a></p>
+                    <p class="font-normal text-sm mb-4"><a href="{{ url('books', [$chap->book_bkid]) }}">{{$chap->chapname}}</a></p>
                 @endforeach
             </div>
     </x-slot:sidebar>

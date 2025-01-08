@@ -19,7 +19,7 @@
 				<h4>Other Publications</h4><br />
 
 					@foreach($bks as $bks)
-						<p><a href="{{ route('books.show', [$bks->bkid]) }}">{{ $bks->bkname }}</a> </p><br />
+						<p class="mb-3 leading-3"><a class="font-normal text-sm" href="{{ url('books', $bks->bkid) }}">{{ $bks->bkname }}</a></p>
 					@endforeach
 			</div>
 		</div>
@@ -28,13 +28,12 @@
 
 		<!-- end col 1 -->
 
-		 <!-- col 2 -->
+		<!-- col 2 -->
 
 	<x-slot:main>
 
 		<div>
-			
-			<!-- book info -->
+		<!-- book info -->
 			<h5>
 				@if(!empty($book->author))
 					Author: {!! $book->author !!}<br />
@@ -51,28 +50,26 @@
 			</h5>
 		</div>
 		
-		
 		<!-- book contents	 -->
 		
-			@if(count($book->chapter)==1)
-				@foreach( $book->chapter as $c)
-				<div class="hyphenate text-justify max-w-[560px]">
-					{!! $c->chapinfo !!}
-				</div>
-				@endforeach
-			@else
+		@if(count($book->chapter)==1)
+			@foreach( $book->chapter as $c)
+			<div class="hyphenate text-justify max-w-[560px]">
+				{!! $c->chapinfo !!}
+			</div>
+			@endforeach
+		@else
 			@foreach($book->chapter as $chap)
-					<h5><a href="{{ route('chapters,show', [$chap->chapid]) }}">{!! $chap->chapname !!}</a></h5>
-					<div class="hyphenate text-justify max-w-[560px]">
-						
-						{!! $info  = abbreviate($chap->chapinfo,$chap->chapid,'chapter',180) !!}
-						<br /><br />
-					</div>
-				@endforeach
-			@endif
-	
-			<span style="text-align:center">@include('/includes.next_prev.book')</span>
-			@if (Auth::check())<br /><a href="{{ url('books/edit', [$book->bkid]) }}">( Edit )</a> @endif
+				<h5><a href="{{ url('chapters', [$chap->chapid]) }}">{!! $chap->chapname !!}</a></h5>
+				<div class="hyphenate text-justify max-w-[560px]">	
+					{!! $info  = abbreviate($chap->chapinfo,$chap->chapid,'chapter',180) !!}
+					<br /><br />
+				</div>
+			@endforeach
+		@endif
+
+		<span style="text-align:center">@include('/includes.next_prev.book')</span>
+		@if (Auth::check())<br /><a href="{{ url('books/edit', [$book->bkid]) }}">( Edit )</a> @endif
 		
 
 	</x-slot:main>

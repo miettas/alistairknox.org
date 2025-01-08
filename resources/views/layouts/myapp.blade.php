@@ -19,14 +19,16 @@
    
     <div class="text-gray-900 antialiased">
         <div class="w-screen">
-            <div class="container mx-auto">@include('includes.navigation')</div>
+            <div class="container mx-auto">
+                @include('includes.navigation')
+            </div>
         </div>
         <div class="grid sm:grid-cols-5  mx-12 gap-4" style="background-color:rgb(255, 254, 252">
        
 
             <!-- col-2 Page Heading  ------>
 
-            <div class="sm:col-span-5 sm:col-start-2 sm:w-screen">
+            <div class="sm:col-span-5 sm:col-start-2 sm:w-screen -mt-8 ">
                 <slot name="header">
                     {{ $header }}
                 </slot>
@@ -34,9 +36,9 @@
         
             <!--new row col 1 sidebar  ---------->
 
-            <div style="background-color:rgb(245, 250, 245);" class="hidden md:block md:start-col-1 -ml-8 pl-4 pr-2 font-bold text-gray-500"> 
-                <slot name="sidebar">    
-                    {{ $sidebar }}        
+            <div style="background-color:rgb(245, 250, 245);" class="hidden md:block md:start-col-1  -ml-8 pl-4 pr-2 font-bold text-gray-500"> 
+                <slot name="sidebar">
+                    {{ $sidebar }}
                 </slot>
             </div> 
             

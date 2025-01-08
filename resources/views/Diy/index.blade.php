@@ -7,7 +7,7 @@
 		@if( isset($noresult))
 			<h1>{{ $noresult }}</h1>
 		@else
-			<h1> Do it Yourself</h1> 
+			<h1 class="mt-12"> Do it Yourself</h1> 
 		@endif
 	</x-slot:header>
 

@@ -1,6 +1,6 @@
 <x-myapp-layout>
 
-	<x-slot:header> 
+	<x-slot:header>
 		
 		<span class="visible sm:invisible max-w-[620px]"]>@include('includes.searches', ['tble' => 'SearchBuildings'])</span>
 
@@ -13,9 +13,9 @@
 	</x-slot:header>
 	
 	<x-slot:sidebar>
-	<h5>
+		<h5>
 			@include('includes.menus.buildings')
-		</h4>
+		</h5>
 	</x-slot:sidebar>
 
 	<x-slot:main>

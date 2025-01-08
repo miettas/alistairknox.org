@@ -63,6 +63,27 @@ h6 {
     margin-bottom: 2.33em;
 } */
 
+ul.a {
+    list-style-type: circle;
+  }
+  
+  ul.b {
+    list-style-type: square;
+  }
+  
+  ol.c {
+    list-style-type: upper-roman;
+  }
+  
+  ol.d {
+    list-style-type: lower-alpha;
+  }
+  ul{
+    margin-left:20px;
+ }
+ li{
+    margin-left:20px;
+ }
 .caption{
     float: left;
     font-family: "Helvetica Neue";
